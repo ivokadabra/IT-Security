@@ -1,0 +1,23 @@
+1) Ja : 10 Zeichen,KleinGroßbuchstaben,Zahlen ,Unikat
+2)
+2.1)https://www.amazon.de/ : bnb12.B34apo
+2.2)https://www.amazon.com/ :bnb12.B34apo
+2.3)https://www.ebay.de/ : fcb12.B34zfc
+2.4)https://www.domainmarkt.de/myonlineshop.de/direct: npz12.B34ipq
+2.5)https://play.google.com/store : qmb12.B34hmf
+2.6)http://www.w21.de/ : x2112.B34x21
+2.7)http://www.zone-h.org/ : apo12.B34f-i
+
+3)aaa sind die letzte drei Buchstaben ,bbb sind die erste 3 Buchstaben
+aaa wird mit ROT+2 und bbb mit ROT-1. Das Rest random 6 Zeichen.
+
+Beispiel:
+https://www.amazon.de/ : coc12.B34znz
+
+4)
+4.1) ifj43.B21jtf : hei ise : https://www.heise.de/
+4.2)ito22.B31sit : hsn rhs : https://moodle.hsnr.de/course/view.php?id=6920
+4.3)zpv98.B12uvc : you tub :https://www.youtube.com/?gl=DE&hl=de
+4.4)gbd98.b12fcp : fac ebo : https://www.facebook.com/
+4.5)ezb43.B21dan :dya czm  : ?
+4.6)ekh55.B44bjq : djg aip : ?
