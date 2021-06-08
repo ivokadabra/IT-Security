@@ -1,0 +1,23 @@
+apt installopenvpn easy-rsa
+cdeasy-rsa/
+mv vars.example vars
+#Installation von PKI and CA
+./easyrsa init-pki
+./easyrsa build-ca
+#Server and Client Schlüsseln erzeugen 
+./easyrsa gen-req server-ws2020 server nopass
+./easyrsa gen-req client-meier client nopass
+#Unterschreiben der Zertifikate(Server/Client)
+./easyrsa sign-req server server-ws2020
+./easyrsa sign-req client client-meiser
+
+
+
+# Aufgabe 5
+
+#a) port 1194
+#b) port 1194
+#c)Für das Routen der Pakete an die OpenVPN-Applikationwird ein (logisches) Netzwerkinterface benötigt.
+
+
+#d)iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE(POSTROUTING erlaubt es Paketen abgeändert zu werden, da diese das externe Gerät der Firewall verlassen. Das -j MASQUERADE-Target-Option ist festgelegt, um die private IP-Adresse eines Knotens mit der externen IP-Adresse der Firewall/des Gateways zu maskieren.)
