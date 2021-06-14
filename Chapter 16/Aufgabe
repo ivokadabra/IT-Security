@@ -1,0 +1,114 @@
+# Aufgabe 1
+
+192.168.10.0/24  Familie 1
+192.168.11.0/24  Familie 2
+192.168.12.0/24  Familie 3
+192.168.13.0/24  Familie 4
+
+192.168.1.0/24  DMZ
+172.30.1.0/24   Managementnetz
+
+194.94.121.1    Internet (öffentliche IP)
+
+# Aufgabe 2
+
+-6 Ports
+
+eth1  Familie 1
+eth2  Familie 2
+eth3  Familie 3
+eth4  Familie 4
+eth6  DMZ
+eth5  Internet
+
+
+#Aufgabe 3
+
+#Aufgabe 4
+
+
+--------------------------------
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+
+iptables -A FORWARD -s s $NET_W1 -i eth5 -o eth0 -j ACCEPT
+iptables -A FORWARD -i eth0 -d $NET_W1 -o eth5 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+iptables -A FORWARD -i eth5 -s $NET_W1 -o eth1 -j ACCEPT
+iptables -A FORWARD -i eth1 -d $NET_W1-o eth5 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+iptables -A FORWARD -i eth5 -s $NET_W1 -o eth2 -j ACCEPT
+iptables -A FORWARD -i eth2 -d $NET_W1 -o eth5 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+
+iptables -t nat -A POSTROUTING -o eth3 -j MASQUERADE
+iptables -A FORWARD -i eth5 -s $NET_W1 -o eth3 -j ACCEPT
+iptables -A FORWARD -i eth3 -d $NET_W1-o eth5 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+
+iptables -t nat -A POSTROUTING -o eth4 -j MASQUERADE
+iptables -A FORWARD -i eth5 -s $NET_W1 -o eth4 -j ACCEPT
+iptables -A FORWARD -i eth4 -d $NET_W1 -o eth5 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+iptables -t nat -A POSTROUTING -o eth6 -j MASQUERADE
+iptables -A FORWARD -i eth5 -s $NET_W1 -o eth6 -j ACCEPT
+iptables -A FORWARD -i eth6 -d $NET_W1 -o eth5 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+
+#Aufgabe 5
+
+
+ptables -A FORWARD -i eth5 -s 192.168.1.0/24 -o eth6 -d 192.168.0.0/24 -j ACCEPT
+
+iptables -A FORWARD -i eth6 -d 192.168.1.0/24 -o eth5 -s 192.168.0.0/24 -j ACCEPT
+
+
+#Aufgabe 6
+
+Vorteile:
+-eigene Adresse verschlüsselt
+
+Nachteile:
+-eine langsamere Internetverbindung
+
+SSH soll reichen
+Aufwand ist zu groß
+
+#Aufgabe 7
+
+- in /etc/openvpn/
+
+
+#Aufgabe 8
+
+ca.key - Auf dem Rechner der Certificate Autority, unterschreibt die Zertifikate
+
+server.crt- Auf dem Rechner der Server-Zertifikate der Server,enthalten den Public key, Vertifizieren den Public key
+
+client.key- Auf dem Rechner der Client-Private key der Client, mit dennen unterschreibt man
+
+
+
+#Aufgabe 9
+
+
+iptables -A OUTPUT -o eth2 -p tcp --dport 22 -j ACCEPT
+
+iptables -A INPUT -i eth2 -p tcp --sport 22 -j  ACCEPT
+
+
+iptables -A FORWARD -s $NET_W2 -i $eth6 -o eth5 -p tcp --match multiport --dports 80,443,20,21,22,53 -j ACCEPT
+
+
+
+
+
