@@ -1,0 +1,46 @@
+#Aufgabe 1
+
+1.gets( code_to_send ) muss mit sichere Variante fgets() ersetzt werden
+
+2.sprintf() muss mit sichere Variante snprintf() ersetzt werden#
+
+3.Code 53A9
+
+4. 3 Versuche, ?
+
+5.?
+
+
+7.Einige Daten sind leicht zu enschlüsseln: C=001,C=002...
+8. Hexadezimal darstellung kann leicht konvertiert werden
+9.Auf diese Weise kann man die Password kovertieren und finden
+10. Bei XOR die Reihenfolgen kann verliert werden.Und Indetische Werten werden immer zu Null gamappt.
+
+11. in Aufgabe.c gemacht
+
+12. Mit dem Satz würden zusätzlichen Zeichen zu dem Password hnizugefügt
+
+#Aufgabe 2
+
+1. getuid()=real UID
+   geteuid()=effective UID
+   
+2.Gibt temporäre den User bestimmte Datei auszuführen
+3.
+chown-steht für change owner und erlaubt das Ändern des Eigentümer-Benutzers und/oder der Eigentümer-Gruppe von Dateien.
+chmod-verändert man die Zugriffsrechte von Ordner
+
+4. Bei dem Stellen 1 und 3 wo die Priviligien vorhanden sind
+
+5.Aufgabe2.c
+
+6. ?
+
+7. old_id ind Aufgabe2.c
+
+
+#Aufgabe 3
+
+1.Username z.B ivokadabra
+2. 0 oder -1
+3.
