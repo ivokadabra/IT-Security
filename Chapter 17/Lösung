@@ -1,0 +1,97 @@
+#Aufgabe 1
+
+1.gets( code_to_send ) muss mit sichere Variante fgets() ersetzt werden
+
+2.sprintf() muss mit sichere Variante snprintf() ersetzt werden
+
+3. Jede Code
+
+4 3 Versuche, ?
+
+5.256^2 und 256^4
+
+256, weil 1 Byte = 8 Bit= 1000 0000=256
+
+
+7.Einige Daten sind leicht zu enschlüsseln: C=001,C=002... sind nicht Random
+
+8. Hexadezimal darstellung kann leicht konvertiert werden,kein Salz,Klartext
+
+9.Hackern müssen Brute Force nutzen um Password zu knacken.
+
+10. Bei XOR die Reihenfolgen kann verliert werden.Und Indetische Werten werden immer zu Null gamappt.Hash darf nicht umkehrbar sein.
+
+11. in Aufgabe.c gemacht
+
+12. Mit dem Satz würden zusätzlichen Zeichen zu dem Password hnizugefügt.Wenn zwei Nutzer dasselbe Password haben mit dem Salz wird den Hash anders ist.
+
+#Aufgabe 2
+
+1. getuid()=real UID
+   geteuid()=effective UID
+   
+2.Gibt temporäre den User bestimmte Datei auszuführen
+3.
+chown-steht für change owner und erlaubt das Ändern des Eigentümer-Benutzers und/oder der Eigentümer-Gruppe von Dateien.
+chmod-verändert man die Zugriffsrechte von Ordner
+
+4. Bei dem Stellen 1 und 3 wo die Priviligien vorhanden sind
+
+5.Aufgabe2.c
+
+6. Kritischenzustand=Root Rechte also Phasen 1 und 3
+
+7. old_id ind Aufgabe2.c
+
+
+#Aufgabe 3
+
+1.Username z.B ivokadabra
+2. 0 oder -1,-2
+3.
+  echo_off() wird dir gets Eingabe(Password) nicht ausgegeben
+  echo_on() User Eingabe wird ausgegegben
+  Auf diese Weiße wird das Password  ausgegeben
+  
+4.gets( buffer ),strcpy( username, u ),sprintf( query_string,40"SELECT u, pw FROM logintable WHERE "41"user='%s' AND password='%s'",42username, buffer )
+5.
+5.1 ja
+5.2 Schnellere Suche in der Datenbank System
+5.3 Passwort wir im Klartext abgelegt, das Password hashen. z.B Password in Hexa decimal konvertieren und durch 0x2329 multiplizieren.
+
+6.Password Abstürtz im Rahmen der Klartext und dann kann ausgenutzt werden.
+
+7.Es wäre sinnvoll wegen der Zugang zu den Datenbanksystem. Für den User damit nicht jeder auf den Datenbanksystem zugreifen kann. (Root Rechte)
+
+8.Man kann dies Schema verwenden: SELECT*FROM users WHERE name='root'--'AND passwd='bla also mit der Hilfe von Zeichen
+
+
+9.
+
+Kommentarzeichen: –,/* */, #
+String-Zeichen: ’, "
+Weiteres SQL-Kommando: ;
+--------------------------------------
+admin'--
+admin'#
+admin'/*
+'or 1=1--
+'or 1=1#'of 1=1/*
+') or'1'='1'--
+') or ('1'='1--
+
+
+10. gemacht
+
+
+11.?
+
+12.Bösartige Angaben durch JavaScript. Nein kein JavaScript wird verarbeitet.
+
+13.Ausnutzung der Fakt ,dass printf unter bestimmte Umstände die Werten der Variablen verändert.Mann kannin dieser Beispiel durch gets() die bösartigen Angaben geben.
+
+
+
+
+
+
